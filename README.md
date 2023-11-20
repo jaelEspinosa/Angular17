@@ -8,7 +8,23 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 
 ## Contenido
 
-- Nueva sintaxis de angular @for @if @else
+- Nueva sintaxis de angular ControlFlow
+  * @for 
+  * @if 
+  * @else 
+  * @Switch
+  * @empty
+  * @case
+  * @default
+
+- Required @Input()
+
+- ChangeDetection- OnPush
+
+- Defer 
+  * Funcionalidad
+  * Triggers
+
 - Signals
 - Observables to signals
 
