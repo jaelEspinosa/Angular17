@@ -1,0 +1,73 @@
+<app-title  title="Control Flow" ></app-title>
+
+<section class="grid grid-cols-1 md:grid-cols-2 gap-3">
+
+<!-- ngIf  @if -->
+
+  <div class="bg-white rounded shadow p-10">
+    <h2 class="text-2xl font-bold mb-5 ">if: {{showContent()}}</h2>
+
+    <button
+    class="p-2 hover:bg-slate-600 transition-all rounded bg-slate-400 text-white"
+    (click)="togglecontent()"
+    >click me!</button>
+  @if ( showContent() ) {
+
+    <h1>hola Mundo</h1>
+  }@else {
+    <h2>----------</h2>
+  }
+
+  </div>
+
+
+<!--  @switch -->
+  <div class="bg-white rounded shadow p-10">
+
+    <h2 class="text-3xl font-bold">{{grade()}}</h2>
+
+    @switch (grade()) {
+      @case ('A') {
+          <p>Por encima de 90</p>
+      }
+      @case ('B') {
+          <p>Por encima de 90</p>
+      }
+      @case ('F') {
+          <p>Reprobado</p>
+      }
+    }
+  </div>
+  <!--  @for -->
+
+  <div class="bg-white rounded shadow p-10">
+<ul>
+  @for (framework of frameworks(); track framework;
+        let i = $index, first = $first, last = $last, even = $even, odd = $odd, count = $count) {
+    <li [class]="{
+      'bg-red-300' : even && !first && !last,
+      'bg-indigo-300' : odd && !first && !last,
+      'bg-green-300' : first || last
+    }"
+    >{{i+1}}/{{count}}-{{framework}}</li>
+  }
+
+</ul>
+</div>
+
+<div class="bg-white rounded shadow p-10">
+<ul>
+  @for (framework of frameworks2(); track $index) {
+    <li>{{framework}}</li>
+  }@empty {
+    <li>Lista Vacia</li>
+  }
+
+</ul>
+  </div>
+
+</section>
+
+
+
+

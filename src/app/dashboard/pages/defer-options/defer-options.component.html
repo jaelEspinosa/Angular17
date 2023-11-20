@@ -1,0 +1,97 @@
+<app-title title = "Defer Triggers"/>
+
+
+<section class="my-5">
+  <h1 class="text-xl">Interacciones</h1>
+  <hr class="my-2">
+  @defer (on interaction) {
+    <app-heavy-loaders-fast cssClass="bg-red-500 h-20 rounded shadow-md">
+      <h1 class="text-2xl text-center flex flex-col justify-center h-full ">On Interaction</h1>
+    </app-heavy-loaders-fast>
+  }@placeholder {
+    <div class="w-full h-20 bg-purple-100">
+      <h3 class="text-2xl text-center flex flex-col justify-center h-full ">Click me!</h3>
+    </div>
+  }
+</section>
+
+
+<section class="my-5">
+
+  <hr class="my-2">
+  <button #btnClickme class="bg-blue-500 hover:bg-blue-700 transition-all rounded p-3 my-2 mb-4 mx-2 text-white">
+  Click me!
+  </button>
+
+  @defer (on interaction(btnClickme)) {
+    <app-heavy-loaders-fast cssClass="bg-blue-500 h-20 rounded shadow-md">
+      <h1 class="text-2xl text-center flex flex-col justify-center h-full ">On Interaction</h1>
+    </app-heavy-loaders-fast>
+  }@placeholder {
+    <div class="w-full h-20 bg-purple-100">
+      <h3 class="text-2xl text-center flex flex-col justify-center h-full">Click on button</h3>
+    </div>
+  }
+</section>
+
+<section class="my-5">
+
+  <hr class="my-2">
+
+
+  @defer (on hover) {
+    <app-heavy-loaders-fast cssClass="bg-indigo-500 h-20  rounded shadow-md">
+      <h1 class="text-2xl text-center flex flex-col justify-center h-full">On Interaction</h1>
+    </app-heavy-loaders-fast>
+  }@placeholder {
+    <div class="w-full h-20 bg-purple-100">
+      <h3 class="text-2xl text-center flex flex-col justify-center h-full">Hover div</h3>
+    </div>
+  }
+</section>
+
+
+<section class="my-5">
+
+  <hr class="my-2">
+
+
+  @defer (on immediate) {
+    <app-heavy-loaders-fast cssClass="bg-green-500 h-20 rounded shadow-md">
+      <h1 class="text-2xl text-center flex flex-col justify-center h-full ">On Immediate</h1>
+    </app-heavy-loaders-fast>
+  }
+</section>
+
+
+<section class="my-5">
+
+  <hr class="my-2">
+
+
+  @defer (on timer( 2500)) {
+    <app-heavy-loaders-fast cssClass="bg-purple-500 h-20 rounded shadow-md">
+      <h1 class="text-2xl text-center flex flex-col justify-center h-full ">On Timer, 2.5 sec.</h1>
+    </app-heavy-loaders-fast>
+  }@placeholder {
+    <div class="w-full h-20 bg-purple-100">
+      <h3 class="text-2xl text-center flex flex-col justify-center h-full">After 2.5 sec.</h3>
+    </div>
+  }
+</section>
+
+<section class="my-5">
+
+  <hr class="my-2">
+
+
+  @defer (on hover; prefetch on idle) {
+    <app-heavy-loaders-fast cssClass="bg-violet-500 h-20 rounded shadow-md">
+      <h1 class="text-2xl text-center flex flex-col justify-center h-full ">On hover</h1>
+    </app-heavy-loaders-fast>
+  }@placeholder {
+    <div class="w-full h-20 bg-purple-100">
+      <h3 class="text-2xl text-center flex flex-col justify-center h-full">Prefetch on hover</h3>
+    </div>
+  }
+</section>
